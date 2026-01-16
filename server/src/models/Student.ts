@@ -4,6 +4,7 @@ export interface IStudent extends Document {
     user: mongoose.Types.ObjectId;
     firstName: string;
     lastName: string;
+    email: string;
     studentId: string;
     dateOfBirth: Date;
     phone: string;
@@ -23,6 +24,11 @@ const StudentSchema: Schema = new Schema<IStudent>({
     lastName: {
         type: String,
         required: true
+    },
+    email: {
+        type: String,
+        required: true,
+        unique: true
     },
     studentId: {
         type: String,

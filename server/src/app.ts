@@ -4,6 +4,8 @@ dotenv.config();
 import cors from 'cors';
 import cookieParser from 'cookie-parser';
 import connectDB from './config/db';
+import authRoutes from './routes/authRoutes';
+import studentRoutes from './routes/studentRoutes';
 
 connectDB();
 
@@ -17,6 +19,10 @@ app.use(cors({
     origin: 'http://localhost:3000', 
     credentials: true
 }))
+
+app.use('/api/v1/auth', authRoutes);
+app.use('/api/v1/students', studentRoutes);
+
 
 app.get('/', (req: Request, res: Response) => {
     res.send('API is running...');
