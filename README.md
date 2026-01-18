@@ -1,70 +1,72 @@
-# 🎓 EduNest - Modern Student Management System
+# 🎓 EduNest - Next-Gen Student Management System
 
-![License](https://img.shields.io/badge/License-MIT-blue.svg)
-![Frontend](https://img.shields.io/badge/Frontend-Next.js_14-black)
-![Backend](https://img.shields.io/badge/Backend-Node.js_%26_Express-green)
-![Database](https://img.shields.io/badge/Database-MongoDB-forestgreen)
-![Style](https://img.shields.io/badge/Style-Tailwind_CSS-38B2AC)
+<div align="center">
 
-> **EduNest** is a robust, full-stack Student Management System designed to streamline administrative tasks for educational institutions. Featuring a stunning **Glassmorphism UI**, secure authentication flows, and real-time database management, it bridges the gap between complex data and user-friendly design.
+[![Next.js](https://img.shields.io/badge/Next.js-14-black?style=for-the-badge&logo=next.js)](https://nextjs.org/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue?style=for-the-badge&logo=typescript)](https://www.typescriptlang.org/)
+[![Node.js](https://img.shields.io/badge/Node.js-20-green?style=for-the-badge&logo=node.js)](https://nodejs.org/)
+[![Vibe Coded](https://img.shields.io/badge/Vibe_Coded-100%25-FF0080?style=for-the-badge&logo=sparkles&logoColor=white)](https://x.com/search?q=vibecoding)
 
----
+**A robust, scalable, and aesthetically stunning ERP solution for modern educational institutions.**
 
-## 📸 Project Previews
+[View Demo](#) · [Report Bug](https://github.com/yourusername/edunest/issues) · [Request Feature](https://github.com/yourusername/edunest/issues)
 
-| **Glassmorphic Login Portal** | **Admin Dashboard** |
-|:---:|:---:|
-| <img src="./screenshots/login-page.png" alt="Login Page" width="400"/> | <img src="./screenshots/dashboard.png" alt="Dashboard" width="400"/> |
-| *Secure, animated entry point with OTP support* | *Real-time statistics and quick actions* |
-
-| **Student Directory** | **Profile Management** |
-|:---:|:---:|
-| <img src="./screenshots/student-list.png" alt="Student List" width="400"/> | <img src="./screenshots/profile-view.png" alt="Profile View" width="400"/> |
+</div>
 
 ---
+
+## 🚀 Overview
+
+**EduNest** is not just another CRUD app; it is a **Fully Vibe Coded** Enterprise Resource Planning (ERP) system. 
+
+Built with a focus on **Flow-State Engineering**, it bridges the gap between complex administrative backend logic and a consumer-grade user experience. By prioritizing intuition over convention, EduNest features a **Glassmorphism UI**, **Role-Based Access Control (RBAC)**, and **Self-Healing Database Transactions** that just *feel* right.
 
 ## ✨ Key Features
 
-### 🔐 **Advanced Authentication**
-* **Secure Admin Login:** JWT-based session management with auto-expiry.
-* **OTP Password Recovery:** Full email-based reset flow (Forgot Password → OTP Verification → Reset).
-* **Glassmorphism UI:** A visually stunning login interface with animated background elements.
+### 🔮 **Fully Vibe Coded**
+* **Intuitive Flow:** The codebase was architected with a "Vibe First" philosophy, ensuring that developer intent translates instantly to user delight.
+* **Aesthetic Engineering:** Every interaction, from the login fade-in to the dashboard pulse, is crafted to maximize user satisfaction and visual harmony.
+* **Modern Velocity:** Built using next-gen AI-assisted workflows to deliver robust features at lightning speed without technical debt.
 
-### 🎓 **Student Management**
-* **CRUD Operations:** Create, Read, Update, and Delete student records instantly.
-* **Smart Search & Filtering:** (Coming Soon) Efficiently locate students by ID or Name.
-* **Profile Views:** Detailed student profiles with formatted dates (e.g., "Jan 13, 2026") and academic details.
-* **Auto-Credentials:** When a student is added, the system automatically generates a password and emails it to them.
+### 🔐 **Enterprise-Grade Security**
+* **Unified Identity Architecture:** Single entry point for both Admins and Students with smart role detection and traffic routing.
+* **ACID Compliant Registration:** Uses MongoDB Sessions & Transactions to ensure data integrity. If a student profile fails to create, the user account is automatically rolled back—preventing "Zombie Users."
+* **JWT & Bcrypt:** Stateless authentication with hashed passwords and secure cookie management.
 
-### 🎨 **Modern UI/UX**
-* **Responsive Design:** Fully optimized for Desktop, Tablet, and Mobile.
-* **Interactive Elements:** Smooth transitions, loading states, and toast notifications.
-* **Clean Architecture:** Built using the `slate` design system for a professional, distraction-free look.
+### 🎨 **Next-Gen UI/UX**
+* **Glassmorphism Design:** A modern, frosted-glass aesthetic using backdrop filters and gradients.
+* **Skeleton Loading States:** "Facebook-style" loading animations for a perceived performance boost.
+* **Micro-Interactions:** Smooth Framer Motion-style animations for buttons, cards, and page transitions.
 
 ---
 
 ## 🛠️ Tech Stack
 
 ### **Frontend (Client)**
-* **Framework:** [Next.js 14](https://nextjs.org/) (App Router)
-* **Language:** TypeScript
-* **Styling:** Tailwind CSS
-* **State Management:** React Context API & Hooks
-* **HTTP Client:** Axios
-* **Icons:** React Icons (`fa`)
+| Tech | Description |
+| :--- | :--- |
+| **Next.js 14** | App Router architecture for server-side rendering and SEO. |
+| **TypeScript** | Strict static typing for bug-free code. |
+| **Tailwind CSS** | Utility-first CSS for rapid, custom design implementation. |
+| **Axios** | Promise-based HTTP client with interceptors for error handling. |
 
 ### **Backend (Server)**
-* **Runtime:** Node.js
-* **Framework:** Express.js
-* **Database:** MongoDB (Mongoose ODM)
-* **Authentication:** JWT (JSON Web Tokens) & Bcrypt
-* **Email Services:** Nodemailer (SMTP)
+| Tech | Description |
+| :--- | :--- |
+| **Node.js & Express** | High-performance REST API. |
+| **MongoDB (Mongoose)** | NoSQL database with Schema validation and Transaction support. |
+| **Nodemailer** | SMTP service for transactional emails (Welcome kits, OTPs). |
+| **JWT** | JSON Web Tokens for secure session management. |
 
 ---
 
-## 🚀 Getting Started
+## ⚡ Getting Started
 
 Follow these steps to set up the project locally.
+
+### **Prerequisites**
+* Node.js (v18+)
+* MongoDB (Local or Atlas)
 
 ### **1. Clone the Repository**
 ```bash
