@@ -8,14 +8,14 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
   const { user, loading } = useAuth();
   const router = useRouter();
 
-  // Protect the route
+
   useEffect(() => {
     if (!loading && !user) {
       router.push("/login");
     }
   }, [user, loading, router]);
 
-  if (loading || !user) return null; // Or a loading spinner
+  if (loading || !user) return null; 
 
   return (
     <div className="flex">

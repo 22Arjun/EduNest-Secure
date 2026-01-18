@@ -5,7 +5,6 @@ import { AuthRequest } from '../types';
 export const verifyToken = (req: AuthRequest, res: Response, next: NextFunction) => {
   let token;
 
-
   if (req.cookies.token) {
     token = req.cookies.token;
   } 

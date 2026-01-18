@@ -17,17 +17,15 @@ export default function ForgotPassword() {
     setError("");
 
     try {
-      // 1. Tell Backend to send the OTP email
+
       await api.post("/auth/forgot-password", { email });
       
-      // 2. Success! Now redirect to the Reset Page
-      // We pass the email in the URL so the next page can grab it automatically
       const encodedEmail = encodeURIComponent(email);
       router.push(`/reset-password?email=${encodedEmail}`);
       
     } catch (err) {
       const error = err as AxiosError<{ message: string }>;
-      // Show error if email not found
+
       setError(error.response?.data?.message || "We couldn't find an account with that email.");
     } finally {
       setLoading(false);
@@ -38,7 +36,7 @@ export default function ForgotPassword() {
     <div className="min-h-screen flex items-center justify-center bg-slate-100 px-4">
       <div className="bg-white p-10 rounded-2xl shadow-2xl w-full max-w-lg border border-slate-200">
         
-        {/* Back Button */}
+
         <button 
           onClick={() => router.push("/login")} 
           className="text-slate-500 font-bold text-sm mb-8 flex items-center hover:text-slate-900 transition"
@@ -46,7 +44,7 @@ export default function ForgotPassword() {
           <FaArrowLeft className="mr-2"/> Back to Login
         </button>
         
-        {/* Header Icon */}
+
         <div className="text-center mb-8">
           <div className="bg-slate-900 w-20 h-20 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg transform rotate-3">
              <FaKey className="text-white text-3xl" />
@@ -57,7 +55,7 @@ export default function ForgotPassword() {
           </p>
         </div>
 
-        {/* Form */}
+
         <form onSubmit={handleSubmit} className="space-y-6">
           
           {error && (

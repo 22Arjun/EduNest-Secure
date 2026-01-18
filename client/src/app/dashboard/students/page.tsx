@@ -4,7 +4,7 @@ import api from "@/utils/api";
 import { Student } from "@/types";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { FaUserGraduate, FaPlus, FaSearch, FaExclamationTriangle, FaCalendar } from "react-icons/fa";
+import { FaUserGraduate, FaPlus, FaExclamationTriangle, FaCalendar } from "react-icons/fa";
 
 export default function StudentsListPage() {
   const [students, setStudents] = useState<Student[]>([]);
@@ -19,12 +19,12 @@ export default function StudentsListPage() {
   const fetchStudents = async () => {
     try {
       setLoading(true);
-      // 👇 Trying to fetch from the standard route
+
       const res = await api.get("/students"); 
       
-      console.log("🔥 API RESPONSE:", res.data); // Check console if list is empty
+      console.log("🔥 API RESPONSE:", res.data);
 
-      // 👇 Smart Logic: Find the array wherever it is hiding
+
       let list: Student[] = [];
       
       if (Array.isArray(res.data)) {
@@ -37,9 +37,18 @@ export default function StudentsListPage() {
 
       setStudents(list);
 
-    } catch (err: any) {
-      console.error("Fetch Error:", err);
-      setError("Failed to load students. Is the backend running?");
+
+      
+
+    }  catch (err) {
+
+        if (err instanceof Error) {
+            console.error("Fetch Error:", err.message);
+    }   else {
+            console.error("An unknown error occurred:", err);
+  }
+        setError("Failed to load students. Is the backend running?");
+
     } finally {
       setLoading(false);
     }
@@ -49,7 +58,7 @@ export default function StudentsListPage() {
     <div className="min-h-screen bg-slate-50 p-8">
       <div className="max-w-7xl mx-auto">
         
-        {/* Header Section */}
+
         <div className="flex flex-col md:flex-row justify-between items-center mb-10 gap-4">
           <div>
             <h1 className="text-3xl font-extrabold text-slate-900">Student Directory</h1>
@@ -65,7 +74,7 @@ export default function StudentsListPage() {
           </button>
         </div>
 
-        {/* Error State */}
+
         {error && (
           <div className="bg-red-50 border-l-4 border-red-500 p-4 mb-8 flex items-center">
             <FaExclamationTriangle className="text-red-500 mr-3 text-xl" />
@@ -73,7 +82,7 @@ export default function StudentsListPage() {
           </div>
         )}
 
-        {/* Loading State */}
+
         {loading ? (
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 animate-pulse">
             {[1, 2, 3].map((i) => (
@@ -82,7 +91,7 @@ export default function StudentsListPage() {
           </div>
         ) : (
           <>
-            {/* Empty State */}
+
             {students.length === 0 && !error ? (
               <div className="text-center py-20 bg-white rounded-2xl shadow-sm border border-slate-200">
                 <FaUserGraduate className="mx-auto text-6xl text-slate-300 mb-4" />
@@ -90,7 +99,7 @@ export default function StudentsListPage() {
                 <p className="text-slate-500">Get started by adding a new student.</p>
               </div>
             ) : (
-              /* Students Grid */
+
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {students.map((student) => (
                   <div key={student._id || student.studentId} className="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 hover:shadow-xl transition-shadow duration-300 flex flex-col justify-between">

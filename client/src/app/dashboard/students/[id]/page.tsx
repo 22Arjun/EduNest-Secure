@@ -49,7 +49,7 @@ export default function StudentDetail() {
     <div className="min-h-screen bg-slate-50 py-10 px-4">
       <div className="max-w-4xl mx-auto">
         
-        {/* Navigation & Actions Header */}
+
         <div className="flex justify-between items-center mb-8">
           <button 
             onClick={() => router.back()} 
@@ -72,10 +72,10 @@ export default function StudentDetail() {
           </div>
         </div>
 
-        {/* Main Profile Card */}
+
         <div className="bg-white rounded-2xl shadow-lg border border-slate-200 overflow-hidden">
           
-          {/* Card Header with Name */}
+
           <div className="px-8 py-8 border-b border-slate-100 bg-gradient-to-r from-slate-900 to-slate-800 text-white">
             <h1 className="text-3xl font-bold">
               {isEditing ? "Editing Profile" : `${student.firstName} ${student.lastName}`}
@@ -85,7 +85,7 @@ export default function StudentDetail() {
             </p>
           </div>
 
-          {/* Details Grid */}
+
           <div className="p-8 grid grid-cols-1 md:grid-cols-2 gap-8">
             {[
               { label: "First Name", name: "firstName" },
@@ -120,7 +120,7 @@ export default function StudentDetail() {
             ))}
           </div>
 
-          {/* Footer Actions (Save Button) */}
+
           {isEditing && (
             <div className="px-8 py-6 bg-slate-50 border-t border-slate-200 flex justify-end">
               <button 

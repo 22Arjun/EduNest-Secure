@@ -1,15 +1,15 @@
 "use client";
-import { useState, useEffect } from "react"; // Added useEffect
+import { useState, useEffect } from "react";
 import api from "@/utils/api";
-import { useRouter, useSearchParams } from "next/navigation"; // Added useSearchParams
+import { useRouter, useSearchParams } from "next/navigation";
 import { AxiosError } from "axios";
 import { FaLock, FaCheckCircle, FaKey } from "react-icons/fa";
 
 export default function ResetPasswordWithOTP() {
   const router = useRouter();
-  const searchParams = useSearchParams(); // 👈 Hook to read URL params
+  const searchParams = useSearchParams(); 
   
-  // 1. Get email automatically from URL
+
   const emailFromUrl = searchParams.get("email"); 
 
   const [otp, setOtp] = useState("");
@@ -17,7 +17,7 @@ export default function ResetPasswordWithOTP() {
   const [confirmPassword, setConfirmPassword] = useState("");
   const [loading, setLoading] = useState(false);
 
-  // Safety check: If no email in URL, send them back to start
+
   useEffect(() => {
     if (!emailFromUrl) {
       alert("Something went wrong. Please start over.");
@@ -28,13 +28,13 @@ export default function ResetPasswordWithOTP() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (password !== confirmPassword) return alert("Passwords do not match!");
-    if (!emailFromUrl) return; // Should not happen due to useEffect
+    if (!emailFromUrl) return;
 
     setLoading(true);
     try {
-      // 🚀 The Magic: We send the hidden email along with OTP and Password
+
       await api.post("/auth/reset-password", { 
-        email: emailFromUrl, // <--- User didn't type this, but we have it!
+        email: emailFromUrl,
         otp, 
         newPassword: password 
       });
@@ -50,7 +50,7 @@ export default function ResetPasswordWithOTP() {
     }
   };
 
-  if (!emailFromUrl) return null; // Don't render if missing data
+  if (!emailFromUrl) return null;
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-slate-100 px-4">
@@ -67,10 +67,8 @@ export default function ResetPasswordWithOTP() {
         </div>
 
         <form onSubmit={handleSubmit} className="space-y-6">
-          
-          {/* Note: NO Email Input Field Here! It's handled invisibly. */}
 
-          {/* OTP Input */}
+
           <div>
             <label className="block text-sm font-extrabold text-slate-700 uppercase tracking-wider mb-2">
               OTP Code
@@ -90,7 +88,7 @@ export default function ResetPasswordWithOTP() {
             </div>
           </div>
 
-          {/* New Password */}
+
           <div>
             <label className="block text-sm font-extrabold text-slate-700 uppercase tracking-wider mb-2">
               New Password
@@ -105,7 +103,7 @@ export default function ResetPasswordWithOTP() {
             />
           </div>
 
-          {/* Confirm Password */}
+
           <div>
             <label className="block text-sm font-extrabold text-slate-700 uppercase tracking-wider mb-2">
               Confirm Password

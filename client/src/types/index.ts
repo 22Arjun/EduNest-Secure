@@ -1,14 +1,14 @@
 // src/types/index.ts
 
 export interface Student {
-  _id: string; // MongoDB ID
+  _id: string;
   firstName: string;
   lastName: string;
   email: string;
-  studentId: string; // Previously rollNumber
+  studentId: string;
   course: string;
   year: number;
-  dateOfBirth: string; // YYYY-MM-DD
+  dateOfBirth: string; 
   phone: string;
-  address?: string; // Optional
+  address?: string; 
 }

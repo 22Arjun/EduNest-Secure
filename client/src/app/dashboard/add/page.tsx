@@ -28,22 +28,22 @@ export default function AddStudentPage() {
     setLoading(true);
     setError("");
 
-    // 👇 1. FIX DATA TYPES BEFORE SENDING
+
     const payload = {
       ...formData,
-      year: 3, // Must be a number (Backend Requirement)
+      year: 3,
       course: "B.Tech AIML",
-      // Ensure dateOfBirth is valid string
+
       dateOfBirth: formData.dateOfBirth ? new Date(formData.dateOfBirth).toISOString().split('T')[0] : "2000-01-01"
     };
 
     try {
-      // 👇 2. USE THE EXACT URL YOU CONFIRMED
+
       console.log("Sending to: /students/add", payload);
       await api.post("/students/add", payload);
       
       alert("Student Added Successfully!");
-      router.push("/dashboard/students"); // Redirect to the NEW list page
+      router.push("/dashboard/students");
 
     } catch (err: any) {
       console.error("Add Error:", err);

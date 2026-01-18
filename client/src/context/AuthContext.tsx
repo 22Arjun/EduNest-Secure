@@ -44,7 +44,7 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
       setLoading(false);
     }, 0);
 
-    return () => clearTimeout(checkAuth); // Cleanup
+    return () => clearTimeout(checkAuth);
   }, []);
 
   const login = (newToken: string) => {
